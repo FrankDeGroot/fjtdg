@@ -28,6 +28,14 @@
 
 <body>
     <h1>fjtdg</h1>
+    <button onclick="callApi()">Call API</button>
+    <pre id="output"></pre>
+    <script>
+        async function callApi() {
+            const res = await fetch('/api/hello');
+            document.getElementById('output').textContent = await res.text();
+        }
+    </script>
 </body>
 
 </html>
