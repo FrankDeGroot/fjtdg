@@ -13,11 +13,16 @@
     <button onclick="logout()">Logout</button>
     <button onclick="getUser()">Who am I?</button>
     <pre id="output"></pre>
+    <pre id="admin"></pre>
     <pre id="me"></pre>
     <script>
         async function callApi() {
             const res = await fetch('/api/hello');
             document.getElementById('output').textContent = await res.text();
+        }
+        async function callAdminApi() {
+            const res = await fetch('/api/admin');
+            document.getElementById('admin').textContent = await res.text();
         }
         function login() {
             window.location.href = '/.auth/login/aad';
