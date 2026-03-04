@@ -9,7 +9,7 @@
         {
             "route": "/api/admin",
             "allowedRoles": [
-                "admin"
+                "authenticated"
             ]
         }
     ]
