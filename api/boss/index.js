@@ -8,5 +8,5 @@ module.exports = async function (context, req) {
     return;
   }
   const decoded = JSON.parse(Buffer.from(clientPrincipal, 'base64').toString('ascii'));
-  context.res = { body: `(boss) Hello ${decoded.userDetails}, you logged in with ${decoded.identityProvider}` };
+  context.res = { body: `(boss) Hello ${decoded.userDetails}, you logged in with ${decoded.identityProvider} with roles ${decoded.userRoles}` };
 };
