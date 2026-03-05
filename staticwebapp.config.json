@@ -7,7 +7,7 @@
             ]
         },
         {
-            "route": "/api/admin",
+            "route": "/api/boss",
             "allowedRoles": [
                 "authenticated"
             ]
