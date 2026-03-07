@@ -1,15 +1,15 @@
 {
     "routes": [
         {
-            "route": "/api/hello",
+            "route": "/api/boss*",
             "allowedRoles": [
-                "authenticated"
+                "admin"
             ]
         },
         {
-            "route": "/api/boss",
+            "route": "/api/*",
             "allowedRoles": [
-                "goober"
+                "authenticated"
             ]
         }
     ]

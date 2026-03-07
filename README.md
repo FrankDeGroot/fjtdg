@@ -1,0 +1,1 @@
+Folder `swa` is deployed to an Azure Static Web App with folder `api` as a backing Azure Function.
