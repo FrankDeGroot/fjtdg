@@ -1,0 +1,9 @@
+{
+  "name": "fjtdg-api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Azure Functions backend for Static Web Apps",
+  "dependencies": {
+    "mssql": "^11.0.1"
+  }
+}
