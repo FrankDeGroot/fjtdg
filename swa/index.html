@@ -13,6 +13,7 @@
     <button onclick="login()">Login</button>
     <button onclick="logout()">Logout</button>
     <button onclick="getUser()">Who am I?</button>
+    <input type="number" id="id" value="1">
     <pre id="output"></pre>
     <pre id="boss"></pre>
     <pre id="me"></pre>
@@ -22,7 +23,8 @@
             document.getElementById('output').textContent = await res.text();
         }
         async function callBossApi() {
-            const res = await fetch('/api/boss');
+            const id = document.getElementById('id').value;
+            const res = await fetch(`/api/boss?id=${id}`);
             document.getElementById('boss').textContent = await res.text();
         }
         function login() {
