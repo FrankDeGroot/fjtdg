@@ -47,6 +47,6 @@ export default withRequiredRole('admin', async function (context, req, principal
     };
   } catch (error) {
     context.log.error('Database query failed', error);
-    context.res = { status: 500, body: 'Database query failed' };
+    context.res = { status: 500, body: `Database query failed ${error}` };
   }
 });
