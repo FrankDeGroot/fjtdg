@@ -40,7 +40,7 @@ jobs:
           app_location: "swa" # App source code path
           api_location: "api" # Api source code path - optional
           api_runtime: "node:20" # Explicitly declare Functions runtime/language
-          skip_api_build: true
+          skip_api_build: false
           output_location: "." # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
