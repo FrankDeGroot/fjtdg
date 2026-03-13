@@ -45,6 +45,7 @@ export default withRequiredRole("admin", async function (request, context, princ
       }
     };
   } catch (error) {
+    poolPromise = undefined;
     context.error("Database query failed", error);
     return { status: 500, jsonBody: { error: `Database query failed ${error}` } };
   }
