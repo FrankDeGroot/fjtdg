@@ -1,0 +1,19 @@
+{
+  "name": "fjtdg-swa",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:local": "npx @azure/static-web-apps-cli start http://localhost:5173 --api-location ../api --run \"npm run dev\" --func-args \"--javascript\"",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "svelte": "^5.38.7"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^5.1.1",
+    "vite": "^6.3.6"
+  }
+}

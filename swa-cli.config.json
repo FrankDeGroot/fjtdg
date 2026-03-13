@@ -3,7 +3,7 @@
   "configurations": {
     "fjtdg": {
       "appLocation": "swa",
-      "outputLocation": "."
+      "outputLocation": "dist"
     }
   }
 }
