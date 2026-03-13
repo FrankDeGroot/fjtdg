@@ -1,0 +1,44 @@
+import { withRequiredRole } from "../_shared/auth.js";
+import sql from "mssql";
+let poolPromise;
+function getPool() {
+    if (!poolPromise) {
+        const connectionString = process.env.SQL_CONNECTION_STRING;
+        if (!connectionString) {
+            throw new Error("Missing SQL_CONNECTION_STRING setting");
+        }
+        poolPromise = new sql.ConnectionPool(connectionString).connect();
+    }
+    return poolPromise;
+}
+export default withRequiredRole("admin", async function (request, context, principal) {
+    const idRaw = request.query.get("id");
+    if (!idRaw) {
+        return { status: 400, jsonBody: { error: "Missing required query parameter 'id'" } };
+    }
+    const id = Number.parseInt(idRaw, 10);
+    if (!Number.isInteger(id)) {
+        return { status: 400, jsonBody: { error: "Query parameter 'id' must be an integer" } };
+    }
+    try {
+        const pool = await getPool();
+        const result = await pool
+            .request()
+            .input("id", sql.Int, id)
+            .query("SELECT name FROM dbo.todo WHERE id = @id");
+        const names = result.recordset.map((row) => row.name);
+        return {
+            status: 200,
+            jsonBody: {
+                requestedBy: principal.userDetails,
+                id,
+                names
+            }
+        };
+    }
+    catch (error) {
+        poolPromise = undefined;
+        context.error("Database query failed", error);
+        return { status: 500, jsonBody: { error: `Database query failed ${error}` } };
+    }
+});

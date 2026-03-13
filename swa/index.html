@@ -19,7 +19,8 @@
     <pre id="me"></pre>
     <script>
         async function callApi() {
-            const res = await fetch('/api/hello');
+            const id = document.getElementById('id').value;
+            const res = await fetch(`/api/hello?id=${id}`);
             document.getElementById('output').textContent = await res.text();
         }
         async function callBossApi() {

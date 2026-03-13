@@ -13,6 +13,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
+    "@azure/cosmos": "^4.3.0",
     "@azure/functions": "^4.8.0",
     "mssql": "^11.0.1"
   },
