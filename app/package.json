@@ -1,4 +1,13 @@
 {
+  "name": "fjtdg-app",
+  "private": true,
+  "scripts": {
+    "start": "node index.mjs",
+    "dev": "node index.mjs"
+  },
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "@hono/node-server": "^1.19.9",
     "hono": "^4.12.4"
