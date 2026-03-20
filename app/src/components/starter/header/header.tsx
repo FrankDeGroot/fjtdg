@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { QwikLogo } from "../icons/qwik";
+import { Me } from "../../me/me";
 import styles from "./header.module.css";
 
 export default component$(() => {
@@ -32,6 +33,9 @@ export default component$(() => {
             >
               Tutorials
             </a>
+          </li>
+          <li>
+            <Me />
           </li>
         </ul>
       </div>
