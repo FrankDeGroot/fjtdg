@@ -1,18 +1,16 @@
 import { app } from "@azure/functions";
 
-import bossHandler from "./boss/index.js";
-import helloHandler from "./hello/index.js";
+import sqlHandler from "./sql/index.js";
+import cosmosHandler from "./cosmos/index.js";
 
-app.http("boss", {
-  route: "boss",
+app.http("sql", {
   methods: ["GET"],
   authLevel: "anonymous",
-  handler: bossHandler
+  handler: sqlHandler
 });
 
-app.http("hello", {
-  route: "hello",
+app.http("cosmos", {
   methods: ["GET"],
   authLevel: "anonymous",
-  handler: helloHandler
+  handler: cosmosHandler
 });

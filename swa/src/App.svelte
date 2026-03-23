@@ -1,17 +1,17 @@
 <script>
   let id = 1;
-  let output = '';
-  let boss = '';
+  let cosmos = '';
+  let sql = '';
   let me = '';
 
-  async function callApi() {
-    const res = await fetch(`/api/hello?id=${id}`);
-    output = await res.text();
+  async function callCosmosApi() {
+    const res = await fetch(`/api/cosmos?id=${id}`);
+    cosmos = await res.text();
   }
 
-  async function callBossApi() {
-    const res = await fetch(`/api/boss?id=${id}`);
-    boss = await res.text();
+  async function callSqlApi() {
+    const res = await fetch(`/api/sql?id=${id}`);
+    sql = await res.text();
   }
 
   function login() {
@@ -32,8 +32,8 @@
 <main>
   <h1>fjtdg</h1>
   <div class="controls">
-    <button on:click={callApi}>Call API</button>
-    <button on:click={callBossApi}>Call Boss API</button>
+    <button on:click={callCosmosApi}>Call Cosomos API</button>
+    <button on:click={callSqlApi}>Call SQL API</button>
     <button on:click={login}>Login</button>
     <button on:click={logout}>Logout</button>
     <button on:click={getUser}>Who am I?</button>
@@ -45,13 +45,13 @@
   </label>
 
   <section>
-    <h2>Hello</h2>
-    <pre>{output}</pre>
+    <h2>Cosmos</h2>
+    <pre>{cosmos}</pre>
   </section>
 
   <section>
-    <h2>Boss</h2>
-    <pre>{boss}</pre>
+    <h2>SQL</h2>
+    <pre>{sql}</pre>
   </section>
 
   <section>

@@ -1,12 +1,6 @@
 {
     "routes": [
         {
-            "route": "/api/boss*",
-            "allowedRoles": [
-                "admin"
-            ]
-        },
-        {
             "route": "/api/*",
             "allowedRoles": [
                 "admin"
